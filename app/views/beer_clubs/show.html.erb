@@ -19,3 +19,10 @@
   <br>
   <%= link_to 'Destroy the club', @beer_club, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
+
+<% if current_user %>
+	<%= form_for(@membership) do |f| %>
+	    <%= f.hidden_field :beer_club_id %>
+	    <%= f.submit value:"join the club" %>
+	 <% end %>
+<% end %>
